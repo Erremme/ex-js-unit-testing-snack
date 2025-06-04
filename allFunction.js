@@ -31,4 +31,8 @@ const isPalindome = (string) =>  {
     
 }
 
- module.exports = {getInitials , createSlug , average , isPalindome}
+const findPostById = (posts, id) => {
+   return posts.find((post) => post.id === id)
+}
+
+ module.exports = {getInitials , createSlug , average , isPalindome, findPostById}
