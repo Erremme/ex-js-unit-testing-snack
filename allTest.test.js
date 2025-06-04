@@ -24,11 +24,9 @@ Creare un test che verifichi la seguente descrizione:
 👉 "La funzione average calcola la media aritmetica di un array di numeri."*/
 
 test("La funzione average calcola la media aritmetica di un array di numeri." , () => {
-    const result = average([1,4,2,6 ,2])
-    expect(result).toBe(3)
-
-    const resultTwo = average([6,4, 8 , 2])
-    expect(resultTwo).toBe(5)
+    
+    expect(average([1,4,2,6 ,2])).toBe(3)
+    expect(average([6,4, 8 , 2])).toBe(5)
 })
 
 
