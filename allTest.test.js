@@ -90,11 +90,13 @@ Creare un test che verifichi la seguente descrizione:
 👉 "La funzione createSlug restituisce una stringa in lowercase." */
 
 test("La funzione createSlug restituisce una stringa in lowercase." , () => {
-   const result = createSlug("Ciao")
-    expect(result).toBe("ciao")
+   
+    expect(createSlug("Ciao")).toBe("ciao")
+    expect(createSlug("HOLA")).toBe("hola")
 
-    const resultTwo = createSlug("CIAO")
-    expect(resultTwo).toBe("ciao")
+    
+
+   
     
 });
 
