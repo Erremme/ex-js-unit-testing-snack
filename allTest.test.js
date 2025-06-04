@@ -1,4 +1,4 @@
-const {getInitials , createSlug} = require("./allFunction.js")
+const {getInitials , createSlug, average , isPalindome} = require("./allFunction.js")
 
 
 
@@ -30,16 +30,46 @@ Creare un test che verifichi la seguente descrizione:
 
 👉 "La funzione average calcola la media aritmetica di un array di numeri."*/
 
-const average = (arr) => {
-    const aver = arr.reduce( (acc , num) => acc+ num , 0) 
-    return aver / arr.length
-    
-}
-
 test("La funzione average calcola la media aritmetica di un array di numeri." , () => {
     const result = average([1,4,2,6 ,2])
     expect(result).toBe(3)
 
     const resultTwo = average([6,4, 8 , 2])
     expect(resultTwo).toBe(5)
+})
+
+
+/* 🏆 Snack 4
+Creare un test che verifichi la seguente descrizione:
+
+👉 "La funzione createSlug sostituisce gli spazi con -."
+
+
+📌 Esempi:
+
+createSlug("Questo è un test") → "questo-e-un-test"*/
+
+test("La funzione createSlug sostituisce gli spazi con -.", () => {
+    const result = createSlug("Ciao come stai?")
+    expect(result).toBe("ciao-come-stai?")
+})
+ 
+
+/*🏆 Snack 5
+Creare un test che verifichi la seguente descrizione:
+
+👉 "La funzione isPalindrome verifica se una stringa è un palindromo."
+
+
+
+📌 Nota: una stringa palindroma è una sequenza di caratteri che si legge uguale sia da sinistra a destra che da destra a sinistra.
+
+ */
+
+test("La funzione isPalindrome verifica se una stringa è un palindromo.", () => {
+    const result = isPalindome("osso")
+    expect(result).toBeTruthy
+
+    const resultTwo = isPalindome("ciao")
+    expect(result).toBeFalsy
 })
