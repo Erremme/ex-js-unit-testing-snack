@@ -7,8 +7,13 @@ Creare un test che verifichi la seguente descrizione:
 👉 "La funzione getInitials restituisce le iniziali di un nome completo." */
 
     test('La funzione getInitials restituisce le iniziali di un nome completo. ', () => { 
-        const result = getInitials("Raffele Molinaro")
-        expect(result).toBe("RM")
+        expect((getInitials("Raffele Molinaro"))).toBe("RM")
+        expect((getInitials("raffele molinaro"))).toBe("RM")
+        expect((getInitials("raffele   molinaro"))).toBe("RM")
+        expect((getInitials("giovanni paolo seconso"))).toBe("GPS")
+
+
+
     })
 
 
