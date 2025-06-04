@@ -11,19 +11,7 @@ Creare un test che verifichi la seguente descrizione:
         expect(result).toBe("RM")
     })
 
-    /*🏆 Snack 2
-Creare un test che verifichi la seguente descrizione:
 
-👉 "La funzione createSlug restituisce una stringa in lowercase." */
-
-test("La funzione createSlug restituisce una stringa in lowercase." , () => {
-   const result = createSlug("Ciao")
-    expect(result).toBe("ciao")
-
-    const resultTwo = createSlug("CIAO")
-    expect(resultTwo).toBe("ciao")
-    
-})
 
 /* 🏆 Snack 3
 Creare un test che verifichi la seguente descrizione:
@@ -39,21 +27,6 @@ test("La funzione average calcola la media aritmetica di un array di numeri." , 
 })
 
 
-/* 🏆 Snack 4
-Creare un test che verifichi la seguente descrizione:
-
-👉 "La funzione createSlug sostituisce gli spazi con -."
-
-
-📌 Esempi:
-
-createSlug("Questo è un test") → "questo-e-un-test"*/
-
-test("La funzione createSlug sostituisce gli spazi con -.", () => {
-    const result = createSlug("Ciao come stai?")
-    expect(result).toBe("ciao-come-stai?")
-})
- 
 
 /*🏆 Snack 5
 Creare un test che verifichi la seguente descrizione:
@@ -74,15 +47,7 @@ test("La funzione isPalindrome verifica se una stringa è un palindromo.", () =>
     expect(resultTwo).toBeFalsy()
 })
 
-/*🏆 Snack 6
-Creare un test che verifichi la seguente descrizione:
 
-👉 "La funzione createSlug lancia un errore se il titolo è vuoto o non valido." */
-
-test( "La funzione createSlug lancia un errore se il titolo è vuoto o non valido.", () => {
-   
-    expect(() => createSlug("")).toThrow(Error)
-})
 
 const posts = [
     { id: 1, title: "Primo post", slug: "primo-post" },
@@ -107,4 +72,53 @@ test("La funzione findPostById restituisce il post corretto dato l'array di post
 
     const resultTwo = findPostById(posts , 3)
     expect(resultTwo).toEqual({ id: 3, title: "Terzo post", slug: "terzo-post" })
+})
+
+/* 🏆 Challenge: describe() - organizzazione dei test
+Organizza i test in describe() raggruppandoli per argomento. */
+
+describe("createSlug" , () => {
+
+        /*🏆 Snack 2
+Creare un test che verifichi la seguente descrizione:
+
+👉 "La funzione createSlug restituisce una stringa in lowercase." */
+
+test("La funzione createSlug restituisce una stringa in lowercase." , () => {
+   const result = createSlug("Ciao")
+    expect(result).toBe("ciao")
+
+    const resultTwo = createSlug("CIAO")
+    expect(resultTwo).toBe("ciao")
+    
+});
+
+/* 🏆 Snack 4
+Creare un test che verifichi la seguente descrizione:
+
+👉 "La funzione createSlug sostituisce gli spazi con -."
+
+
+📌 Esempi:
+
+createSlug("Questo è un test") → "questo-e-un-test"*/
+
+test("La funzione createSlug sostituisce gli spazi con -.", () => {
+    const result = createSlug("Ciao come stai?")
+    expect(result).toBe("ciao-come-stai?")
+});
+
+
+/*🏆 Snack 6
+Creare un test che verifichi la seguente descrizione:
+
+👉 "La funzione createSlug lancia un errore se il titolo è vuoto o non valido." */
+
+test( "La funzione createSlug lancia un errore se il titolo è vuoto o non valido.", () => {
+   
+    expect(() => createSlug("")).toThrow(Error)
+})
+
+
+
 })
