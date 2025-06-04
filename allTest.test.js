@@ -71,10 +71,13 @@ Creare uno o più test aggiuntivi che controllino che la struttura dati passati 
 
 test("La funzione findPostById restituisce il post corretto dato l'array di post e l'id" , () => {
     const result = findPostById(posts , 2)
-    expect(result).toEqual({ id: 2, title: "Secondo post", slug: "secondo-post" })
+    expect(findPostById(posts , 2)).toEqual({ id: 2, title: "Secondo post", slug: "secondo-post" })
+    expect(findPostById(posts , 4)).toBe(null)
 
-    const resultTwo = findPostById(posts , 3)
-    expect(resultTwo).toEqual({ id: 3, title: "Terzo post", slug: "terzo-post" })
+
+    expect(() => findPostById(posts , "ciao")).toThrow("'ciao' non è un id")
+    expect(() => findPostById([34,62,12] , 2)).toThrow("L/' array non è nel formato corretto")
+
 })
 
 /* 🏆 Challenge: describe() - organizzazione dei test

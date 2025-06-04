@@ -32,7 +32,19 @@ const isPalindome = (string) =>  {
 }
 
 const findPostById = (posts, id) => {
-   return posts.find((post) => post.id === id)
+    if(isNaN(id)){
+        throw new Error("'ciao' non è un id")
+    }
+    posts.forEach((post) => {
+        if(post.id === undefined ||
+            post.title === undefined ||
+            post.slug === undefined
+        ){
+            throw new Error("L/' array non è nel formato corretto");
+            
+        }
+    })
+   return posts.find((post) => post.id === id) || null
 }
 
  module.exports = {getInitials , createSlug , average , isPalindome, findPostById}
