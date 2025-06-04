@@ -47,4 +47,24 @@ const findPostById = (posts, id) => {
    return posts.find((post) => post.id === id) || null
 }
 
- module.exports = {getInitials , createSlug , average , isPalindome, findPostById}
+function addPost(posts , post) {
+    posts.forEach((p) => {
+        if(p.id === post.id){
+            throw new Error("l' id che hai passato esiste gia")
+        }
+
+        if(p.slug === post.slug){
+            throw new Error("lo slugs che hai passato esiste gia")
+
+        }
+    })
+    return posts.push(post)
+}
+
+function removePost(posts , id) {
+    const index = posts.findIndex((post) => post.id === id)
+    posts.splice(index, 1)
+    
+}
+
+ module.exports = {getInitials , createSlug , average , isPalindome, findPostById, addPost, removePost}
