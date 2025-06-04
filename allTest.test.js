@@ -1,4 +1,4 @@
-const {getInitials} = require("./allFunction.js")
+const {getInitials , createSlug} = require("./allFunction.js")
 
 
 
@@ -19,4 +19,8 @@ Creare un test che verifichi la seguente descrizione:
 test("La funzione createSlug restituisce una stringa in lowercase." , () => {
    const result = createSlug("Ciao")
     expect(result).toBe("ciao")
+
+    const resultTwo = createSlug("CIAO")
+    expect(resultTwo).toBe("ciao")
+    
 })

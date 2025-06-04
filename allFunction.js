@@ -5,4 +5,6 @@ const getInitials = (fullName) => {
 }
 
 
- module.exports = {getInitials}
+const createSlug = (str) => str.toLowerCase()
+
+ module.exports = {getInitials , createSlug}
