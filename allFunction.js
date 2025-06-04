@@ -5,7 +5,14 @@ const getInitials = (fullName) => {
 }
 
 
-const createSlug = (str) => str.toLowerCase().replace(/\s+/g, "-")
+const createSlug = (str) => {
+    if(str === ""){
+        throw new Error("La stringa è vuota!")
+    }else{
+
+       return str.toLowerCase().replace(/\s+/g, "-")
+    }
+}
 
 
 const average = (arr) => {
@@ -15,13 +22,13 @@ const average = (arr) => {
 }
 
 const isPalindome = (string) =>  {
-    const reverseString = string.split(" ").reverse().join("")
+    const reverseString = string.split("").reverse().join("")
 
-    if(string === reverseString){
-        return true
-    }else{
-       return false
+    if(string !== reverseString){
+        return false
     }
+       return true
+    
 }
 
  module.exports = {getInitials , createSlug , average , isPalindome}
