@@ -1,7 +1,8 @@
 const getInitials = (fullName) => {
-    fullName.split(" ")
-    return fullName.map((word) => word.charAt(0) ).join("")
+    const words = fullName.split(" ")
+    const char = words.map((word) => word.charAt(0) )
+     return char.join("")
 }
 
 
- exports = {getInitials}
+ module.exports = {getInitials}
