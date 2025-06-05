@@ -93,6 +93,13 @@ test( "La funzione createSlug lancia un errore se il titolo è vuoto o non valid
     expect(() => createSlug("")).toThrow(Error)
 })
 
+test("Se viene passato un array di post come secondo argomento , la funzione createSlug incrementa di 1 se lo slug esiste già", () => {
+    
+    expect(createSlug("Primo post", posts)).toBe("primo-post-1")
+     addPost(posts, { id: 4, title: "Altro post", slug: createSlug("primo post", posts) })
+     expect(posts[posts.length -1].slug).toBe("primo-post-1")
+})
+
 
 })
 

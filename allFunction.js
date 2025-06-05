@@ -5,13 +5,24 @@ const getInitials = (fullName) => {
 }
 
 
-const createSlug = (str) => {
+const createSlug = (str, posts) => {
     if(str === ""){
         throw new Error("La stringa è vuota!")
-    }else{
+    } 
+       let slug = str.toLowerCase().replaceAll(" " , "-")
 
-       return str.toLowerCase().replace(/\s+/g, "-")
+    if(posts){
+        for(let i = 0; i < posts.length; i++){
+            const post = posts[i]
+            if(post.slug === slug){
+              return  slug + "-1"
+            }
+        }
     }
+    
+    return slug
+
+    
 }
 
 
